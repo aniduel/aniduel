@@ -8,6 +8,7 @@ from discord.ext import commands
 
 from config import TEST_GUILD
 from bot import ShardedBot
+from components.dev import EvalModal
 
 
 _log = logging.getLogger()
@@ -62,8 +63,15 @@ class Developer(commands.GroupCog):
         )
 
         await interaction.followup.send(confirmation, ephemeral=True)
+    
+    @app_commands.command(
+        name="eval",
+        description="Developer: Execute code"
+    )
+    async def _eval(self, interaction: discord.Interaction):
+        modal = EvalModal()
+        await interaction.response.send_modal(modal)
 
 
 async def setup(bot: ShardedBot):
     await bot.add_cog(Developer(bot))
-    

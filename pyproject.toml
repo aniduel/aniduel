@@ -7,6 +7,7 @@ authors = ["justanotherbyte <wishymovies@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.10"
 "discord.py" = "^2.0.0"
+redis = ">=4.2.0rc1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

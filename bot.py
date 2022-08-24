@@ -7,7 +7,7 @@ from discord.ext import commands
 from config import APPLICATION_ID, SUPPORT_GUILD_INVITE
 
 
-_log = logging.getLogger()
+_log = logging.getLogger(__name__)
 
 DISABLED_MESSAGE = (
     "The bot has currently been disabled, either due to maintenance or due "
